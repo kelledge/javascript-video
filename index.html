@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.14.1/alt/video-js-cdn.min.css" />
+
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/video.js/5.14.1/video-js.swf -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.14.1/video.min.js"></script>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function() {
+
+        p = videojs('player', {
+          techOrder: ['html5', 'flash'],
+          controls: true,
+          autoplay: false,
+          preload: 'auto',
+          width: 640,
+          height: 264,
+          flash: {
+            swf: "https://cdnjs.cloudflare.com/ajax/libs/video.js/5.14.1/video-js.swf"
+          }
+        });
+
+        p.src({ type: "video/flv", src: "http://www.sample-videos.com/video/flv/720/big_buck_bunny_720p_1mb.flv"})
+        console.log(p);
+      });
+    </script>
+
+    <video id="player" class="video-js vjs-default-skin"></video>
+  </body>
+</html>
